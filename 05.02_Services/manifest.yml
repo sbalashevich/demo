@@ -1,0 +1,15 @@
+---
+applications:
+- name: helloworld
+  host: helloworld-${random-word}
+  memory: 512m
+  instances: 1
+  path: target/helloworld-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack#v3.18
+  disk: 1024m
+  stack: cflinuxfs2
+  services:
+  - user-provided-ef152
+#  env:
+#    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+#    spring.profiles.active: cloud
